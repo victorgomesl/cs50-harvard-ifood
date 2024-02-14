@@ -10,6 +10,6 @@ Este repositório contém as soluções para os exercícios do curso CS50 de Har
 - [Exercício 4: Credit](./exercicio4)
 - [Exercício 5: Readability](./exercicio5)
 - [Exercício 6: DNA](./exercicio6)
-- [Exercício 7: Torunament](./exercicio7)
+- [Exercício 7: Tournament](./exercicio7)
 
 Cada exercício está em sua própria pasta com o código-fonte e uma breve descrição.

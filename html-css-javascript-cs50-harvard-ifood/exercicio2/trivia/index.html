@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Multiple choice question
+            document.querySelectorAll('.multiple-choice button').forEach(button => {
+                button.onclick = function() {
+                    const correct = this.dataset.correct; // Assumes data-correct attribute exists
+                    document.querySelectorAll('.multiple-choice button').forEach(btn => {
+                        if(btn.dataset.correct === "true") {
+                            btn.style.backgroundColor = 'lightgreen';
+                        } else {
+                            btn.style.backgroundColor = 'lightcoral';
+                        }
+                    });
+                    const result = document.querySelector('#multiple-choice-result');
+                    if (correct === "true") {
+                        result.textContent = "Correto!";
+                        result.style.color = 'green';
+                    } else {
+                        result.textContent = "Incorreto.";
+                        result.style.color = 'red';
+                    }
+                };
+            });
+
+            // Free response question
+            document.querySelector('#free-response-submit').onclick = function() {
+                const input = document.querySelector('#free-response');
+                const answer = input.value.trim().toLowerCase(); // Assumes the correct answer is "leonardo da vinci" in lowercase
+                const result = document.querySelector('#free-response-result');
+                if (answer === "leonardo da vinci") {
+                    input.style.backgroundColor = 'lightgreen';
+                    result.textContent = "Correto!";
+                    result.style.color = 'green';
+                } else {
+                    input.style.backgroundColor = 'lightcoral';
+                    result.textContent = "Incorreto.";
+                    result.style.color = 'red';
+                }
+            };
+        });
+    </script>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice</h2>
+            <hr>
+            <h3>Qual é a capital da França?</h3>
+            <button data-correct="false">Londres</button>
+            <button data-correct="true">Paris</button>
+            <button data-correct="false">Berlim</button>
+            <p id="multiple-choice-result"></p>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>Quem pintou a Mona Lisa?</h3>
+            <input type="text" id="free-response">
+            <button id="free-response-submit">Confirmar</button>
+            <p id="free-response-result"></p>
+        </div>
+    </div>
+</body>
+</html>

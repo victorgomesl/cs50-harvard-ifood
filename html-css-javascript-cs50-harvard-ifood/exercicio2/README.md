@@ -1,0 +1,3 @@
+# Exercicio 2: Trivia
+
+Este projeto desafia você a criar uma página da web interativa para jogar um jogo de perguntas triviais. Usando suas habilidades em HTML, CSS e JavaScript, você construirá um quiz que não só testa o conhecimento dos usuários em vários tópicos, mas também oferece feedback instantâneo sobre suas respostas. O objetivo é praticar e aprimorar suas habilidades de desenvolvimento web, enquanto cria uma aplicação divertida e educativa.
